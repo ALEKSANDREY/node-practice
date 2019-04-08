@@ -1,9 +1,13 @@
 const fs = require("fs");
 
-fs.existSync("sample.txt");
+let fileName = process.argv[2];
 
+if (fs.existsSync(fileName) == false) {
+	console.log("The filename " + fileName + " does not exist!");
 
-let fileName = "sampleText.txt";
+	process.exit();
+	
+{
 
 let data = fs.readFileSync(fileName, "utf8");
 
